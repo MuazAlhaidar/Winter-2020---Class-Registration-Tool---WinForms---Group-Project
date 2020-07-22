@@ -1,0 +1,23 @@
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\bin\Debug\Registration Database.exe.config
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\bin\Debug\Registration Database.exe
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\bin\Debug\Registration Database.pdb
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\bin\Debug\EntityFramework.dll
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\bin\Debug\EntityFramework.xml
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration Database.csprojAssemblyReference.cache
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.MainMenu.resources
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.Properties.Resources.resources
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration Database.csproj.GenerateResource.cache
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration Database.csproj.CoreCompileInputs.cache
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration Database.csproj.CopyComplete
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration Database.exe
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration Database.pdb
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.MajorMenu.resources
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.FacultyMenu.resources
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.GradeMenu.resources
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.SectionsMenu.resources
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.StudentMenu.resources
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.EnrollmentsMenu.resources
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.CourseMenu.resources
+C:\Users\omuna\Documents\GitHub\CIS297Database\Registration Database\Registration Database\obj\Debug\Registration_Database.Student_MajorMenu.resources

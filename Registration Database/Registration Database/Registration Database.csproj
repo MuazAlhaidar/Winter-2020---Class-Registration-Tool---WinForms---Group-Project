@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D66DEEE5-2698-48CF-8269-1B712CFBCBAF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Registration_Database</RootNamespace>
+    <AssemblyName>Registration Database</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Course.cs">
+      <DependentUpon>RegistrationDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enrollment.cs">
+      <DependentUpon>RegistrationDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentsMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentsMenu.Designer.cs">
+      <DependentUpon>EnrollmentsMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty.cs">
+      <DependentUpon>RegistrationDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacultyMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacultyMenu.Designer.cs">
+      <DependentUpon>FacultyMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GradeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GradeMenu.Designer.cs">
+      <DependentUpon>GradeMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grade.cs">
+      <DependentUpon>RegistrationDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseMenu.Designer.cs">
+      <DependentUpon>CourseMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Major.cs">
+      <DependentUpon>RegistrationDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MajorMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MajorMenu.Designer.cs">
+      <DependentUpon>MajorMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationDatabaseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrationDatabaseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationDatabaseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrationDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationDatabaseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrationDatabaseModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Section.cs">
+      <DependentUpon>RegistrationDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SectionsMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SectionsMenu.Designer.cs">
+      <DependentUpon>SectionsMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student-MajorMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student-MajorMenu.Designer.cs">
+      <DependentUpon>Student-MajorMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs">
+      <DependentUpon>RegistrationDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentMenu.Designer.cs">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Major.cs">
+      <DependentUpon>RegistrationDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EnrollmentsMenu.resx">
+      <DependentUpon>EnrollmentsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacultyMenu.resx">
+      <DependentUpon>FacultyMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GradeMenu.resx">
+      <DependentUpon>GradeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseMenu.resx">
+      <DependentUpon>CourseMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MajorMenu.resx">
+      <DependentUpon>MajorMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SectionsMenu.resx">
+      <DependentUpon>SectionsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student-MajorMenu.resx">
+      <DependentUpon>Student-MajorMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentMenu.resx">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="RegistrationDatabaseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RegistrationDatabaseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RegistrationDatabaseModel.edmx.diagram">
+      <DependentUpon>RegistrationDatabaseModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RegistrationDatabaseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RegistrationDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>RegistrationDatabaseModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RegistrationDatabaseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RegistrationDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>RegistrationDatabaseModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="SQL TABLE QUERIES.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

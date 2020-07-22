@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RegistrationDatabaseProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Credits" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Sections" Relationship="Self.FK_Section_ToCourse" FromRole="Course" ToRole="Section" />
+  </EntityType>
+  <EntityType Name="Enrollment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Student_Id" Type="Int32" Nullable="false" />
+    <Property Name="Section_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Section" Relationship="Self.FK_Enrollment_ToSection" FromRole="Enrollment" ToRole="Section" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_Enrollment_ToStudent" FromRole="Enrollment" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Office" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Sections" Relationship="Self.FK_Section_ToFaculty" FromRole="Faculty" ToRole="Section" />
+  </EntityType>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="A_Grade" Type="Int32" Nullable="false" />
+    <Property Name="B_Grade" Type="Int32" Nullable="false" />
+    <Property Name="C_Grade" Type="Int32" Nullable="false" />
+    <Property Name="F_Grade" Type="Int32" Nullable="false" />
+    <Property Name="Section_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Section" Relationship="RegistrationDatabaseProjectModel.FK_Grade_ToSection" FromRole="Grade" ToRole="Section" />
+    <Property Name="Aminus_Grade" Type="Int32" Nullable="false" />
+    <Property Name="Bplus_Grade" Type="Int32" Nullable="false" />
+    <Property Name="Bminus_Grade" Type="Int32" Nullable="false" />
+    <Property Name="Cplus_Grade" Type="Int32" Nullable="false" />
+    <Property Name="Cminus_Grade" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Major">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Student_Major" Relationship="RegistrationDatabaseProjectModel.FK_Student_Major_ToMajor" FromRole="Major" ToRole="Student_Major" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <Property Name="Course_Id" Type="Int32" Nullable="false" />
+    <Property Name="Faculty_Id" Type="Int32" Nullable="false" />
+    <Property Name="Monday" Type="Boolean" Nullable="false" />
+    <Property Name="Tuesday" Type="Boolean" Nullable="false" />
+    <Property Name="Wednesday" Type="Boolean" Nullable="false" />
+    <Property Name="Thursday" Type="Boolean" Nullable="false" />
+    <Property Name="Friday" Type="Boolean" Nullable="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Course" Relationship="Self.FK_Section_ToCourse" FromRole="Section" ToRole="Course" />
+    <NavigationProperty Name="Enrollments" Relationship="Self.FK_Enrollment_ToSection" FromRole="Section" ToRole="Enrollment" />
+    <NavigationProperty Name="Faculty" Relationship="Self.FK_Section_ToFaculty" FromRole="Section" ToRole="Faculty" />
+    <NavigationProperty Name="Grades" Relationship="RegistrationDatabaseProjectModel.FK_Grade_ToSection" FromRole="Section" ToRole="Grade" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Enrollments" Relationship="Self.FK_Enrollment_ToStudent" FromRole="Student" ToRole="Enrollment" />
+    <NavigationProperty Name="Student_Major" Relationship="RegistrationDatabaseProjectModel.FK_Student_Major_ToStudent" FromRole="Student" ToRole="Student_Major" />
+  </EntityType>
+  <Association Name="FK_Section_ToCourse">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="Section" Type="Self.Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enrollment_ToSection">
+    <End Role="Section" Type="Self.Section" Multiplicity="1" />
+    <End Role="Enrollment" Type="Self.Enrollment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Enrollment">
+        <PropertyRef Name="Section_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enrollment_ToStudent">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Enrollment" Type="Self.Enrollment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Enrollment">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Section_ToFaculty">
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="1" />
+    <End Role="Section" Type="Self.Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="Faculty_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RegistrationDatabaseProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="Enrollments" EntityType="Self.Enrollment" />
+    <EntitySet Name="Faculties" EntityType="Self.Faculty" />
+    <EntitySet Name="Grades" EntityType="Self.Grade" />
+    <EntitySet Name="Majors" EntityType="Self.Major" />
+    <EntitySet Name="Sections" EntityType="Self.Section" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <AssociationSet Name="FK_Section_ToCourse" Association="Self.FK_Section_ToCourse">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Section" EntitySet="Sections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enrollment_ToSection" Association="Self.FK_Enrollment_ToSection">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="Enrollment" EntitySet="Enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enrollment_ToStudent" Association="Self.FK_Enrollment_ToStudent">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Enrollment" EntitySet="Enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Section_ToFaculty" Association="Self.FK_Section_ToFaculty">
+      <End Role="Faculty" EntitySet="Faculties" />
+      <End Role="Section" EntitySet="Sections" />
+    </AssociationSet>
+    <EntitySet Name="Student_Major" EntityType="RegistrationDatabaseProjectModel.Student_Major" />
+    <AssociationSet Name="FK_Grade_ToSection" Association="RegistrationDatabaseProjectModel.FK_Grade_ToSection">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="Grade" EntitySet="Grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Major_ToMajor" Association="RegistrationDatabaseProjectModel.FK_Student_Major_ToMajor">
+      <End Role="Major" EntitySet="Majors" />
+      <End Role="Student_Major" EntitySet="Student_Major" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Major_ToStudent" Association="RegistrationDatabaseProjectModel.FK_Student_Major_ToStudent">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Student_Major" EntitySet="Student_Major" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Student_Major">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Student_Id" Type="Int32" Nullable="false" />
+    <Property Name="Major_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Major" Relationship="RegistrationDatabaseProjectModel.FK_Student_Major_ToMajor" FromRole="Student_Major" ToRole="Major" />
+    <NavigationProperty Name="Student" Relationship="RegistrationDatabaseProjectModel.FK_Student_Major_ToStudent" FromRole="Student_Major" ToRole="Student" />
+  </EntityType>
+  <Association Name="FK_Grade_ToSection">
+    <End Type="RegistrationDatabaseProjectModel.Section" Role="Section" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RegistrationDatabaseProjectModel.Grade" Role="Grade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Grade">
+        <PropertyRef Name="Section_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Major_ToMajor">
+    <End Type="RegistrationDatabaseProjectModel.Major" Role="Major" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RegistrationDatabaseProjectModel.Student_Major" Role="Student_Major" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student_Major">
+        <PropertyRef Name="Major_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Major_ToStudent">
+    <End Type="RegistrationDatabaseProjectModel.Student" Role="Student" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RegistrationDatabaseProjectModel.Student_Major" Role="Student_Major" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student_Major">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

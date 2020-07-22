@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RegistrationDatabaseProjectModelStoreContainer" CdmEntityContainer="RegistrationDatabaseProjectEntities">
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="RegistrationDatabaseProjectModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Credits" ColumnName="Credits" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enrollments">
+      <EntityTypeMapping TypeName="RegistrationDatabaseProjectModel.Enrollment">
+        <MappingFragment StoreEntitySet="Enrollment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Student_Id" ColumnName="Student_Id" />
+          <ScalarProperty Name="Section_Id" ColumnName="Section_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faculties">
+      <EntityTypeMapping TypeName="RegistrationDatabaseProjectModel.Faculty">
+        <MappingFragment StoreEntitySet="Faculty">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Office" ColumnName="Office" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grades">
+      <EntityTypeMapping TypeName="RegistrationDatabaseProjectModel.Grade">
+        <MappingFragment StoreEntitySet="Grade">
+          <ScalarProperty Name="Cminus_Grade" ColumnName="Cminus_Grade" />
+          <ScalarProperty Name="Cplus_Grade" ColumnName="Cplus_Grade" />
+          <ScalarProperty Name="Bminus_Grade" ColumnName="Bminus_Grade" />
+          <ScalarProperty Name="Bplus_Grade" ColumnName="Bplus_Grade" />
+          <ScalarProperty Name="Aminus_Grade" ColumnName="Aminus_Grade" />
+          <ScalarProperty Name="Section_Id" ColumnName="Section_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="A_Grade" ColumnName="A_Grade" />
+          <ScalarProperty Name="B_Grade" ColumnName="B_Grade" />
+          <ScalarProperty Name="C_Grade" ColumnName="C_Grade" />
+          <ScalarProperty Name="F_Grade" ColumnName="F_Grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majors">
+      <EntityTypeMapping TypeName="RegistrationDatabaseProjectModel.Major">
+        <MappingFragment StoreEntitySet="Major">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sections">
+      <EntityTypeMapping TypeName="RegistrationDatabaseProjectModel.Section">
+        <MappingFragment StoreEntitySet="Section">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Course_Id" ColumnName="Course_Id" />
+          <ScalarProperty Name="Faculty_Id" ColumnName="Faculty_Id" />
+          <ScalarProperty Name="Monday" ColumnName="Monday" />
+          <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+          <ScalarProperty Name="Wednesday" ColumnName="Wednesday" />
+          <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+          <ScalarProperty Name="Friday" ColumnName="Friday" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="RegistrationDatabaseProjectModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_Major">
+      <EntityTypeMapping TypeName="RegistrationDatabaseProjectModel.Student_Major">
+        <MappingFragment StoreEntitySet="Student-Major">
+          <ScalarProperty Name="Major_Id" ColumnName="Major_Id" />
+          <ScalarProperty Name="Student_Id" ColumnName="Student_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
